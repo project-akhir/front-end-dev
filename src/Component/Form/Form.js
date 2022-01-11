@@ -14,6 +14,7 @@ const Form = ({currentId, setCurrentId}) => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = JSON.parse(localStorage.getItem('profile'))
+    console.log(user);
 
     useEffect(()=>{
         if(post) setPostData(post)
@@ -23,13 +24,13 @@ const Form = ({currentId, setCurrentId}) => {
         e.preventDefault()
 
         if(currentId === null){
-            console.log("sudah masuk sini");
+            console.log("sudah masuk sini, ini create");
             console.log(postData);
             console.log(user?.result?.name);
             dispatch(createPost({ ...postData, name: user?.result?.name }))
         }else{
             console.log(currentId);
-            console.log("sudah masuk siniii");
+            console.log("sudah masuk siniii, ini update");
             dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }))
         }
         clear()

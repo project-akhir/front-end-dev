@@ -15,9 +15,7 @@ const Post = ({post, setCurrentId}) => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = JSON.parse(localStorage.getItem('profile'))
-    
-    // console.log(post.likes.length);
-//    console.log(user);
+
     const Likes = () => {
         if(post.likes.length > 0){
             return post.likes.find((like) => like === (user?.result?._id))
@@ -30,6 +28,8 @@ const Post = ({post, setCurrentId}) => {
         }
         return <><ThumbUpAltOutlined fontSize="small"/>&nbsp;Like</>
     }
+
+
     return(
         <Card className={classes.card}>
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
@@ -38,25 +38,28 @@ const Post = ({post, setCurrentId}) => {
                 <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
             </div>
             <div className={classes.overlay2}>
+                { (user?.result?._id === post?.creator) && (
                 <Button style={{color: 'white'}} size="small" onClick={() => {setCurrentId(post._id)}}>
-                    <MoreHorizIcon fontSize="medium"/>
+                    <EditIcon fontSize="medium"/>
                 </Button>
+                 ) }
             </div>
             <div className={classes.details}>
                 <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
             </div>
-            <Typography className={classes.title} variant="h6" gutterBottom>{post.title}</Typography>
+            <Typography className={classes.title} variant="body1">{post.title}</Typography>
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
             </CardContent>
             <CardActions>
                 <Button size="small" color="primary" disabled={!user?.result} onClick={()=>dispatch(likePost(post._id))}>
-                    {/* <Likes /> */}
+                    <Likes />
                 </Button>
+                { (user?.result?._id === post?.creator) && (
                 <Button size="small" color="primary" onClick={()=>dispatch(deletePost(post._id))}>
                     <DeleteIcon fontSize="small"/>
                     Delete
-                </Button>
+                </Button>)}
             </CardActions>
         </Card>
     )
