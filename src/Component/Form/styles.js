@@ -7,12 +7,18 @@ export default makeStyles((theme) => ({
     },
   },
   half: {
-    width: "48.5%",
+    width: "100%",
   },
   double: {
     
   },
+  title:{
+    textAlign: 'center',
+  },
   paper: {
+    marginTop: '10%',
+    marginLeft: '25%',
+    width: '45%',
     padding: theme.spacing(2),
   },
   form: {
@@ -27,11 +33,18 @@ export default makeStyles((theme) => ({
   buttonSubmit: {
     marginTop: '15px',
     marginBottom: 10,
-    width: "47.5%",
+    width: "45%",
     marginLeft: "11px",
     marginRight: '11px'
   },
   [theme.breakpoints.down('md')] : {
+    buttonSubmit: {
+      marginTop: '15px',
+      marginBottom: 10,
+      width: "100%",
+      marginLeft: "11px",
+      marginRight: '11px'
+    },
     half :{
       width: '100%',
     }

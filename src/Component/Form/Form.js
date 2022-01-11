@@ -53,7 +53,7 @@ const Form = ({currentId, setCurrentId}) => {
 
     return(
         <Paper className={classes.paper}>
-                <Typography variant="h6">{currentId ? 'Editing' : 'Help'}</Typography>
+                <Typography variant="h6" className={classes.title}>{currentId ? 'Editing' : 'Help'}</Typography>
                 <form autoComplete="off" noValidate className={`${classes.form} ${classes.root}`} onSubmit={handleSubmit}>
                     <TextField className={classes.half} name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({...postData, title: e.target.value})} />
                     <TextField className={classes.half} name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} onChange={(e) => setPostData({...postData, tags: e.target.value.split(',')})} />
