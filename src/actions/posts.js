@@ -15,24 +15,25 @@ export const getPosts = () => async (dispatch) => {
 export const createPost = (post) => async(dispatch) => {
     try{
         const {data} = await api.createPost(post)
-
+        console.log(data, "=====================");
         dispatch({type: CREATE, payload: data})
     }catch(err){
-        console.log(err)
+        console.log(err.response)
+        console.log(err.data)
     }
 }
 
 export const updatePost = (id, post) => async (dispatch) => {
     try{
         console.log("udah kesini");
-        console.log(id);
-        console.log(post);
         const {data} = await api.updatePost(id, post)
+        
+        console.log(data, "======ini di post.js/updatepost");
 
-        console.log("test");
         dispatch({type: UPDATE, payload: data})
     }catch(err){
-        console.log(err);
+        console.log(err.response);
+        console.log(err.data);
     }
 }
 
