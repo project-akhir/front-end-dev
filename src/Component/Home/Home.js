@@ -24,10 +24,11 @@ const Home = () => {
     }, [currentId, dispatch])
         
     return(
-    <Grow in>
+  <div className={classes.bg} > 
+  <Grow in>
           <Container>
             <Grid container  justifyContent="space-between" alignItems='start' spacing={1}>
-              <Grid item xs={12} sm={12}>
+              <Grid  item xs={12} sm={12}>
               <Button onClick={handleOpen} color='primary' variant='contained'>+ Add Post</Button>
                 <Modal 
                   open={open}
@@ -45,6 +46,7 @@ const Home = () => {
             </Grid>
         </Container>
     </Grow>
+  </div>
     )
 }
 

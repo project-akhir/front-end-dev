@@ -4,7 +4,7 @@ import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 
 
-const Input = ({ half, name, handleChange, label, autoFocus, type, handleShowPassword }) => (
+const Input = ({ half, name, handleChange, label, autoFocus, type, handleShowPassword, helperText, error, disabled }) => (
     <Grid item xs={12} sm={half ? 6 : 12}>
     <TextField
         name={name}
@@ -12,6 +12,9 @@ const Input = ({ half, name, handleChange, label, autoFocus, type, handleShowPas
         variant="outlined"
         required
         fullWidth
+        error={error}
+        disabled={disabled}
+        helperText={helperText}
         label={label}
         autoFocus={autoFocus}
         type={type}
@@ -24,6 +27,7 @@ const Input = ({ half, name, handleChange, label, autoFocus, type, handleShowPas
                 </InputAdornment>
             )
         } : null }
+        // InputProps={name === 'email' && helperText === 'You already have an account' ? error : null}
     />
 
     </Grid>

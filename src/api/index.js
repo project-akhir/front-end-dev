@@ -16,5 +16,6 @@ export const updatePost = (id, updatedPost) => URL.patch(`/posts/${id}`, updated
 export const deletePost = (id) => URL.delete(`/posts/${id}`)
 export const likePost = (id) => URL.patch(`/posts/${id}/likePost`)
 
+export const fetchUser = () => URL.get('/user/semua')
 export const signIn = (formData) => URL.post('/user/signin', formData)
 export const signUp = (formData) => URL.post('/user/signup', formData)

@@ -9,16 +9,15 @@ import Home from './Component/Home/Home'
 import Auth from './Component/Auth/Auth';
 
 function App() {
+  const classes = useStyles()
 
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Navbar/>
-      <Container maxWidth="lg">
         <Routes>
           <Route path="/" exact element={<Home/>}/>
           <Route path="/auth" exact element={<Auth/>}/>
         </Routes>
-    </Container>
     </BrowserRouter>
   );
 }
