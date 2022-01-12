@@ -21,6 +21,10 @@ export default makeStyles((theme) => ({
     width: '45%',
     padding: theme.spacing(2),
   },
+  before:{
+    marginTop: '20%',
+    marginLeft: '26%'
+  },
   form: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -47,6 +51,18 @@ export default makeStyles((theme) => ({
     },
     half :{
       width: '100%',
+    },
+  },
+  [theme.breakpoints.down('sm')] : {
+    before:{
+      marginTop: '35%',
+      marginLeft: '26%'
+    }
+  },
+  [theme.breakpoints.down('xs')] : {
+    before:{
+      marginTop: '60%',
+      marginLeft: '24%'
     }
   },
 }));

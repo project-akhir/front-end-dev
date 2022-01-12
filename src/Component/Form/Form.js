@@ -43,7 +43,7 @@ const Form = ({currentId, setCurrentId}) => {
 
     if(!user?.result?.name){
         return(
-            <Paper className={classes.paper}>
+            <Paper className={`${classes.paper} ${classes.before}`}>
                 <Typography variant="h6" align="center">
                     Please sign in to create a request or help other people
                 </Typography>
