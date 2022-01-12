@@ -1,6 +1,15 @@
-import { AUTH } from './actionType'
+import { AUTH, FETCH_USER } from './actionType'
 import * as api from '../api/index.js'
 
+export const getUser = () => async (dispatch) => {
+    try{
+        const { data } = await api.fetchUser()
+
+        dispatch ({ type: FETCH_USER, payload: data})
+    }catch(err){
+        console.log(err)
+    }
+}
 
 export const signin = (formData, navigate) => async (dispatch) => {
     try{

@@ -7,6 +7,8 @@ import { signin, signup } from '../../actions/auth'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import ParticlesBg from "particles-bg";
+import {useSelector} from 'react-redux'
+import { getUser } from "../../actions/auth"
 
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: ''}
@@ -18,8 +20,13 @@ const Auth = () => {
     const [isSignUp, setIsSignUp] = useState(false)
     const [formData, setFormData] = useState(initialState)
     const navigate = useNavigate()
+    const [isUser, setUser] = useState(false)
 
     const handleShowPassword = () => setShowPassword(!showPassword)
+
+    const check = useSelector((state) => state.auth)
+    // console.log(check, "DISINI USE SELECTOR=======");
+    //dispatch(getUser())
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -43,6 +50,18 @@ const Auth = () => {
         setShowPassword(false)
     }
 
+    const userCheck = (e) => {
+        dispatch(getUser())
+        setFormData({ ...formData, [e.target.name]: e.target.value})
+        const checkUser = check.filter((user) => user.email === e.target.value)
+
+        if(checkUser.length === 0){
+            setUser(false)
+        }else{
+            setUser(true)
+        }
+    }
+
     return(
         <Container component="main" maxWidth="xs">
             <Paper className={classes.paper} elevation={3}>
@@ -55,15 +74,15 @@ const Auth = () => {
                         {
                             isSignUp && ( 
                                 <>
-                                    <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half/>
-                                    <Input name="lastName" label="Last Name" handleChange={handleChange} autoFocus half/>
+                                    <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half error={false}/>
+                                    <Input name="lastName" label="Last Name" handleChange={handleChange} autoFocus half error={false}/>
                                 </>
                             )}
-                            <Input name="email" label="Email Address" handleChange={handleChange} type="email"/>
+                            <Input name="email" label='Email Address' helperText={isUser && isSignUp ? "You already have an account" : "" } error={isUser && isSignUp ? true : false } type="email" handleChange={userCheck} />
                             <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} />
                             { isSignUp && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
                     </Grid>
-                    <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} >
+                    <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} disabled={isUser && isSignUp ? true : false} >
                         { isSignUp ? 'Sign Up' : 'Sign In'}
                     </Button>
                     <Grid item>
@@ -73,7 +92,7 @@ const Auth = () => {
                     </Grid>
                 </form>
             </Paper>
-            <ParticlesBg type="cobweb" bg={true}  num={15}/> 
+            <ParticlesBg type="cobweb" bg={true} num={15}/> 
         </Container>
         )
 }

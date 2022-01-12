@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { deepPurple } from '@material-ui/core/colors';
+import { blue, deepPurple} from '@material-ui/core/colors';
 
 function random_color() {
   var letters = '0123456789ABCDEF'.split('');
@@ -13,15 +13,20 @@ function random_color() {
 export default makeStyles((theme) => ({
   appBar: {
      borderRadius: 0,
-     margin: '0px 0px 50px 0px',
+     margin: '0px 0px 6px 0px',
      display: 'flex',
      flexDirection: 'row',
      justifyContent: 'space-between',
      alignItems: 'center',
      padding: '10px 30px',
+     //backgroundColor: '#DFD3C3'
+  },
+  bg: {
+    backgroundColor: deepPurple
   },
   heading: {
-    color: '#424242',
+    color: '#343a40',
+    fontWeight: 'bold',
     textDecoration: 'none',
   },
   image: {

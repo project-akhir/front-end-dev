@@ -15,5 +15,9 @@ export default makeStyles({
   },
   modal: {
     backgroundColor: 'blue',
+  },
+  bg: {
+    backgroundColor : '#f8f9fa',
+    paddingTop: '30px'
   }
 })

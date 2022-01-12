@@ -15,6 +15,9 @@ export default makeStyles ((theme) => ({
     image: {
         marginLeft: '15px',
     },
+    bg : {
+        backgroundColor: '#f5f3f4'
+    },
     [theme.breakpoints.down('sm')] : {
         mainContainer : {
             flexDirection: "column-reverse"

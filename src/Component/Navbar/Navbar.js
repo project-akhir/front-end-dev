@@ -37,9 +37,10 @@ const Navbar = () => {
     }, [location])
 
     return(
-        <AppBar className={classes.appBar} position="static" color="inherit">
+      <div className={classes.bg}>  
+        <AppBar className={classes.appBar} sx={{ boxShadow: 3 }} position="static" color="inherit">
           <div className={classes.brandContainer}>
-            <Typography component={Link} to="/" className={classes.heading} variant='h5' align='center'>COVID-HELP</Typography>
+            <Typography component={Link} to="/" className={classes.heading} variant='h4' align='center'>COVID-HELP</Typography>
             {/* <img className={classes.image} src={memories} alt='memories' height='60'/> */}
           </div>
           <Toolbar className={classes.toolbar}>
@@ -58,6 +59,7 @@ const Navbar = () => {
                 )}
           </Toolbar>
         </AppBar>
+                  </div>
     )
 }
 

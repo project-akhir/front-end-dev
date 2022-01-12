@@ -1,7 +1,9 @@
-import { AUTH, LOGOUT } from "../actions/actionType"
+import { AUTH, LOGOUT, FETCH_USER } from "../actions/actionType"
 
 const auth = ( state = { authData: null }, action ) => {
     switch(action.type){
+        case FETCH_USER : 
+            return action.payload
         case AUTH : 
             localStorage.setItem('profile', JSON.stringify({ ...action?.data }))
 
