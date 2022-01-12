@@ -6,6 +6,8 @@ import Input from './Input'
 import { signin, signup } from '../../actions/auth'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import ParticlesBg from "particles-bg";
+
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: ''}
 
@@ -71,6 +73,7 @@ const Auth = () => {
                     </Grid>
                 </form>
             </Paper>
+            <ParticlesBg type="cobweb" bg={true}  num={15}/> 
         </Container>
         )
 }
