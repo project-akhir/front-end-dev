@@ -27,7 +27,7 @@ const Home = () => {
   <div className={classes.bg} > 
   <Grow in>
           <Container>
-            <Grid container  justifyContent="space-between" alignItems='start' spacing={1}>
+            <Grid container  justifyContent="space-between" alignItems='flex-start' spacing={1}>
               <Grid  item xs={12} sm={12}>
               <Button onClick={handleOpen} color='primary' variant='contained'>+ Add Post</Button>
                 <Modal 
@@ -35,9 +35,8 @@ const Home = () => {
                   onClose={handleClose}
                   aria-labelledby="modal-modal-title"
                   aria-describedby="modal-modal-description"
-                  
                 >
-                  <Form className={classes.form} currentId={currentId} setCurrentId={setCurrentId}/>
+                  <Form className={classes.form} setOpen={setOpen} currentId={currentId} setCurrentId={setCurrentId}/>
                 </Modal>
               </Grid>
               <Grid item xs={12} sm={12}>

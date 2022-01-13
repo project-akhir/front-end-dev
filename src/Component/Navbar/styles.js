@@ -62,4 +62,36 @@ export default makeStyles((theme) => ({
     color: theme.palette.getContrastText(deepPurple[900]),
     backgroundColor: random_color,
   },
+  [theme.breakpoints.down('sm')] : {
+    heading : {
+      color: '#343a40',
+      fontWeight: 'bold',
+      textDecoration: 'none',
+      fontSize : 24
+  },
+    userName: {
+      display: 'none'
+  },
+   toolbar1: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    width: '170px',
+  }
+  },
+  [theme.breakpoints.down('xs')] : {
+    heading : {
+      color: '#343a40',
+      fontWeight: 'bold',
+      textDecoration: 'none',
+      fontSize : 20
+  },
+    userName: {
+      display: 'none'
+  },
+   toolbar1: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    width: '170px',
+  }
+  }
 }));
