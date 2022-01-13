@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import useStyles from './styles'
 import { createPost, updatePost } from "../../actions/posts";
  
-const Form = ({currentId, setCurrentId}) => {
+const Form = ({currentId, setCurrentId, setOpen}) => {
     const [postData, setPostData] = useState({
         title:'', message: '', tags:'', selectedFile: ''
     })
@@ -14,8 +14,7 @@ const Form = ({currentId, setCurrentId}) => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = JSON.parse(localStorage.getItem('profile'))
-    console.log(user);
-
+    // console.log(user);
     useEffect(()=>{
         if(post) setPostData(post)
     }, [post])
@@ -33,6 +32,7 @@ const Form = ({currentId, setCurrentId}) => {
             console.log("sudah masuk siniii, ini update");
             dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }))
         }
+        setOpen(false)
         clear()
     }
 

@@ -4,7 +4,7 @@ export default makeStyles({
   media: {
     height: 0,
     paddingTop: '56.25%',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    backgroundColor: 'rgba(0, 0, 0, 0.35)',
     backgroundBlendMode: 'darken',
   },
   border: {
@@ -39,13 +39,22 @@ export default makeStyles({
   details: {
     display: 'flex',
     justifyContent: 'space-between',
+    marginTop: '8px',
     margin: '15px',
+    fontWeight: 'bold'
   },
   title: {
-    padding: '0 16px',
+    padding: '0px 16px',
+    paddingTop: '16px',
+    fontWeight: 'lighter'
+  },
+  message: {
+    padding: '0px 0px',
+    paddingTop: '0px',
+    fontWeight: 'lighter'
   },
   cardActions: {
-    padding: '16px 16px 8px 16px',
+    padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',
   },

@@ -16,7 +16,7 @@ export default makeStyles((theme) => ({
     textAlign: 'center',
   },
   paper: {
-    marginTop: '10%',
+    marginTop: '15%',
     marginLeft: '25%',
     width: '45%',
     padding: theme.spacing(2),
@@ -52,17 +52,35 @@ export default makeStyles((theme) => ({
     half :{
       width: '100%',
     },
+    paper: {
+      marginTop: '30%',
+      marginLeft: '25%',
+      width: '45%',
+      padding: theme.spacing(2),
+    }
   },
   [theme.breakpoints.down('sm')] : {
     before:{
       marginTop: '35%',
       marginLeft: '26%'
+    },
+    paper: {
+      marginTop: '40%',
+      marginLeft: '25%',
+      width: '50%',
+      padding: theme.spacing(2),
     }
   },
   [theme.breakpoints.down('xs')] : {
     before:{
       marginTop: '60%',
       marginLeft: '24%'
+    },
+    paper: {
+      marginTop: '60%',
+      marginLeft: '20%',
+      width: '55%',
+      padding: theme.spacing(2),
     }
   },
 }));
