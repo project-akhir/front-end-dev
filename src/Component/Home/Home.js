@@ -29,7 +29,7 @@ const Home = () => {
           <Container>
             <Grid container  justifyContent="space-between" alignItems='flex-start' spacing={1}>
               <Grid  item xs={12} sm={12}>
-              <Button onClick={handleOpen} color='primary' variant='contained'>+ Add Post</Button>
+              <Button onClick={handleOpen} className={classes.modal} variant='contained'>+ Add Post</Button>
                 <Modal 
                   open={open}
                   onClose={handleClose}

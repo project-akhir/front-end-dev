@@ -1,7 +1,7 @@
-import { blue } from '@material-ui/core/colors';
+import { deepPurple, indigo } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles({
+export default makeStyles((theme) => ({
   form: {
     position: 'absolute',
     top: '50%',
@@ -14,10 +14,14 @@ export default makeStyles({
     p: 4,
   },
   modal: {
-    backgroundColor: 'blue',
+    color: theme.palette.getContrastText(indigo[800]),
+    backgroundColor: indigo[800],
+    '&:hover': {
+    backgroundColor: indigo[700],
+    }
   },
   bg: {
     backgroundColor : '#f8f9fa',
     paddingTop: '30px'
   }
-})
+}));

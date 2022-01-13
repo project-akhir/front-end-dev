@@ -55,8 +55,8 @@ const Post = ({post, setCurrentId}) => {
                     <Likes fontSize="small"/>
                 </Button>
                 { (user?.result?._id === post?.creator) && (
-                <Button size="small" color="primary" onClick={()=>dispatch(deletePost(post._id))}>
-                    <DeleteIcon fontSize="small"/>
+                <Button size="small"  onClick={()=>dispatch(deletePost(post._id))}>
+                    <DeleteIcon className={classes.delete} fontSize="small"/>
                     Delete
                 </Button>)}
             </CardActions>
