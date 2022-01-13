@@ -1,6 +1,13 @@
+import { deepPurple, indigo } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles({
+export default makeStyles((theme) => ({
+  delete:{
+    color: indigo[800],
+    '&:hover': {
+    color: indigo[700],
+    }
+  },
   media: {
     height: 0,
     paddingTop: '56.25%',
@@ -58,4 +65,4 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
-});
+}));

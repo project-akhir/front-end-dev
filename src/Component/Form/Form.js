@@ -59,8 +59,8 @@ const Form = ({currentId, setCurrentId, setOpen}) => {
                     <TextField className={classes.half} name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} onChange={(e) => setPostData({...postData, tags: e.target.value.split(',')})} />
                     <TextField className={classes.double} name="message" variant="outlined" label="Message" fullWidth value={postData.message} onChange={(e) => setPostData({...postData, message: e.target.value})} />
                     <div className={classes.fileInput}><FileBase type="file" mutiple={false} onDone={({base64}) => setPostData({...postData, selectedFile: base64})}/> </div>
-                    <Button className={`${classes.buttonSubmit} `} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
                     <Button variant="contained" className={`${classes.buttonSubmit}`} color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+                    <Button className={`${classes.buttonSubmit} ${classes.submit}`} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
                 </form>
         </Paper>
     )

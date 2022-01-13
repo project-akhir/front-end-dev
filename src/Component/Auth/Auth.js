@@ -64,10 +64,7 @@ const Auth = () => {
 
     return(
         <Container component="main" maxWidth="xs">
-            <Paper className={classes.paper} elevation={3}>
-                <Avatar className={classes.avatar}>
-                    <LockOutlinedIcon/>
-                </Avatar>
+            <Paper className={isSignUp ? classes.paper : classes.paper1} elevation={5}>
                 <Typography variant="h5">{isSignUp ? 'Sign Up' : 'Sign In'}</Typography>
                 <form className={classes.form} onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
@@ -82,11 +79,11 @@ const Auth = () => {
                             <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} />
                             { isSignUp && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
                     </Grid>
-                    <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} disabled={isUser && isSignUp ? true : false} >
+                    <Button type="submit" fullWidth variant="contained" className={classes.submit} disabled={isUser && isSignUp ? true : false} >
                         { isSignUp ? 'Sign Up' : 'Sign In'}
                     </Button>
                     <Grid item>
-                        <Button onClick={switchMode}>
+                        <Button onClick={switchMode} color='primary'>
                             { isSignUp ? 'Already have an account? Sign In' : "Don't have an account ?  Sign Up"}
                         </Button>
                     </Grid>

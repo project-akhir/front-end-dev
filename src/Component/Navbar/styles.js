@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { blue, deepPurple} from '@material-ui/core/colors';
+import { deepPurple, indigo} from '@material-ui/core/colors';
 
 function random_color() {
   var letters = '0123456789ABCDEF'.split('');
@@ -11,6 +11,13 @@ function random_color() {
 }
 
 export default makeStyles((theme) => ({
+  submit:{
+    color: theme.palette.getContrastText(indigo[800]),
+    backgroundColor: indigo[800],
+    '&:hover': {
+      backgroundColor: indigo[700],
+      }
+  },
   appBar: {
      borderRadius: 0,
      margin: '0px 0px 6px 0px',
@@ -25,7 +32,7 @@ export default makeStyles((theme) => ({
     backgroundColor: deepPurple
   },
   heading: {
-    color: '#343a40',
+    color: indigo[900],
     fontWeight: 'bold',
     textDecoration: 'none',
   },
@@ -64,7 +71,7 @@ export default makeStyles((theme) => ({
   },
   [theme.breakpoints.down('sm')] : {
     heading : {
-      color: '#343a40',
+      color: indigo[900],
       fontWeight: 'bold',
       textDecoration: 'none',
       fontSize : 24
@@ -80,7 +87,7 @@ export default makeStyles((theme) => ({
   },
   [theme.breakpoints.down('xs')] : {
     heading : {
-      color: '#343a40',
+      color: indigo[900],
       fontWeight: 'bold',
       textDecoration: 'none',
       fontSize : 20
